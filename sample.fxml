@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane style="-fx-background-image: url(https://github.com/Severik/SMS/blob/master/src/ua/gotsman/sms/res/background.jpg?raw=true);" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ua.gotsman.sms.Controller">
+    <TabPane layoutY="92.0" prefHeight="408.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab style="-fx-font-size: 13;" text="Главная">
+            <TextArea fx:id="mainTextArea" blendMode="MULTIPLY" editable="false" prefHeight="200.0" prefWidth="200.0">
+                <font>
+                    <Font size="13.0" />
+                </font>
+            </TextArea>
+        </Tab>
+        <Tab style="-fx-font-size: 13" text="Отправка СМС">
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                <TextField fx:id="enterPhone" layoutX="64.0" layoutY="48.0" prefHeight="29.0" prefWidth="176.0" promptText="Введите номер телефона" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </TextField>
+                <TextArea fx:id="enterSms" layoutX="64.0" layoutY="108.0" prefHeight="200.0" prefWidth="379.0" promptText="Напишите здесь ваше сообщение." style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </TextArea>
+                <Button fx:id="accept" layoutX="127.0" layoutY="323.0" mnemonicParsing="false" onAction="#accept" prefHeight="31.0" prefWidth="90.0" stylesheets="@buttonStyle.css" text="Отправить" />
+                <Button fx:id="cancel" layoutX="284.0" layoutY="323.0" mnemonicParsing="false" onAction="#cancel" prefHeight="31.0" prefWidth="90.0" stylesheets="@buttonStyle.css" text="Отмена" />
+            </AnchorPane>
+        </Tab>
+        <Tab closable="false" style="-fx-font-size: 13;" text="О программе">
+            <TextArea blendMode="MULTIPLY" editable="false" prefHeight="200.0" prefWidth="200.0" text="Программа позволяет отправлять СМС сообщения в автоматическом и ручном &#10;режиме одновременно.&#10;&#10;Автоматическая рассылка СМС активируется нажатием кнопки &quot;Старт&quot; &#10;и деактивируется кнопкой &quot;Стоп&quot;.&#10;&#10;Отправить СМС сообщение в ручном режиме можно из окна &quot;Отправка СМС&quot;&#10;Номер телефона вводить в формате: 0501112233&#10;Максимальный размер – 800 символов. Сообщение при необходимости &#10;будет разбито на несколько SMS, отправленных абоненту и оплаченных &#10;по отдельности. Размер одного SMS – 160 символов в латинице или 70 символов &#10;в кириллице. При разбивке сообщения на несколько SMS в каждую часть &#10;добавляется заголовок для объединения частей в одно сообщение на телефоне &#10;получателя.&#10;&#10;Кнопка &quot;Сайт&quot; открывает окно браузера с сайтом http://soft-techno.tk&#10;&#10;Кнопка &quot;Лог&quot; открывает текстовый файл с историей сообщений.&#10;&#10;&#10;&#9;&#9;&#9;&#9;    © 2016 Gotsman Denis. All rights reserved." />
+        </Tab>
+    </TabPane>
+    <Button fx:id="start" layoutX="29.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnStart" prefHeight="60.0" prefWidth="60.0" styleClass="button" stylesheets="@buttonStyle.css" text="Старт">
+        <font>
+            <Font size="15.0" />
+        </font>
+    </Button>
+    <Button fx:id="stop" layoutX="114.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnStop" prefHeight="60.0" prefWidth="60.0" styleClass="button" stylesheets="@buttonStyle.css" text="Стоп">
+        <font>
+            <Font size="15.0" />
+        </font>
+    </Button>
+    <TextField fx:id="balanceField" editable="false" layoutX="216.0" layoutY="14.0" onAction="#showBalance" prefHeight="25.0" prefWidth="135.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" />
+    <Button fx:id="log" accessibleRole="MENU_BUTTON" layoutX="396.0" layoutY="42.0" mnemonicParsing="false" onAction="#btnLog" prefHeight="31.0" prefWidth="74.0" stylesheets="@buttonStyle.css" text="Лог">
+        <font>
+            <Font size="15.0" />
+        </font>
+    </Button>
+    <Hyperlink fx:id="siteLink" alignment="CENTER" contentDisplay="CENTER" layoutX="396.0" layoutY="4.0" onAction="#btnHyperLink" prefHeight="39.0" prefWidth="74.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Сайт" textFill="#5919e5">
+        <font>
+            <Font name="Andalus" size="15.0" />
+        </font>
+    </Hyperlink>
+    <TextField fx:id="smsCount" editable="false" layoutX="216.0" layoutY="49.0" onAction="#smsCount" prefHeight="25.0" prefWidth="135.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" />
+   <CheckBox fx:id="checkBox" blendMode="MULTIPLY" layoutX="93.0" layoutY="37.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="3.0" />
+</Pane>
