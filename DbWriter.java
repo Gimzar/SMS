@@ -13,7 +13,7 @@ public class DbWriter {
             System.out.println("Driver not found.");
             e.printStackTrace();
         }
-        Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/stszpua_db","Severik", "Derparol12!@");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/stszpua_db","testuser", "testparol");
         connection.close();
     }*/
 }
