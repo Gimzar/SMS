@@ -16,8 +16,8 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 
 class Sms implements Runnable {
-    private final static String LOGIN = "Severik";
-    private final static String PASSWORD = "Derparol12!@";
+    private final static String LOGIN = "testuser";
+    private final static String PASSWORD = "testparol";
     private final static Logger log = Logger.getLogger(Sms.class.getName());
     private Path path = Paths.get("Z:\\");
     private Info info;
